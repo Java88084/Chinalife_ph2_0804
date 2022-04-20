@@ -72,6 +72,13 @@
 			animate:true,
 			cascadeCheck:true,
 			checkbox:true,
+			formatter:function(node){
+                        var s = node.text;
+                        if (node.children){
+                            s += '&nbsp;<span style=\'color:blue\'>(' + node.children.length + ')</span>';
+                        }
+                        return s;
+                        },
 			data: [
     {
         "id": 1,
