@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="./jquery.easyui.min.js"></script>
 </head>
 <body>
+<!--
 	<h2>CheckBox Tree</h2>
 	<p>Tree nodes with check boxes.</p>
 	
@@ -27,7 +28,7 @@
 	<div class="easyui-panel" style="padding:5px">
 		<ul id="tt" class="easyui-tree" ></ul>
 	</div>
-
+-->
 
 
 	<script type="text/javascript">
@@ -109,6 +110,9 @@
     }
 ]
 		});
+
+$('#tt').tree({cascadeCheck:$(this).is(':checked')});
+
 	</script>
 
 
