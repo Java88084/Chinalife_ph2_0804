@@ -25,11 +25,11 @@
 	</div>
 
 
-	<div class="easyui-panel" style="padding:5px">
+	<div class="easyui-panel" style="padding:0px">
+-->
+	<div style="padding:0px">
 		<ul id="tt" class="easyui-tree" ></ul>
 	</div>
--->
-
 
 	<script type="text/javascript">
 		function getChecked(){
@@ -70,7 +70,15 @@
 
 		$('#tt').tree({
 			animate:true,
+			cascadeCheck:true,
 			checkbox:true,
+			formatter:function(node){
+                        var s = node.text;
+                        if (node.children){
+                            s += '&nbsp;<span style=\'color:blue\'>(' + node.children.length + ')</span>';
+                        }
+                        return s;
+                        },
 			data: [
     {
         "id": 1,
@@ -183,7 +191,7 @@
 ]
 		});
 
-$('#tt').tree({cascadeCheck:$(this).is(':checked')});
+//$('#tt').tree({cascadeCheck:true});
 
 	</script>
 
